@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dBRelacional:Esquema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dBRelacional="http://www.example.org/dBRelacional"
+    xsi:schemaLocation="http://www.example.org/dBRelacional dBRelacional.ecore"
+    nombre="Restaurante">
+  <tablas nombre="Cliente">
+    <columna
+        nombre="id"
+        esPK="true"
+        esAutoIncrementable="true"/>
+    <columna
+        nombre="nombre"
+        tipo="Cadena"
+        largo="45"/>
+    <columna
+        nombre="telefono"
+        tipo="Cadena"
+        largo="45"/>
+  </tablas>
+  <tablas nombre="Factura">
+    <columna
+        nombre="id"
+        esPK="true"
+        esAutoIncrementable="true"/>
+    <columna
+        nombre="fecha"
+        tipo="Cadena"
+        largo="45"/>
+    <columna
+        nombre="numero"
+        tipo="Cadena"
+        largo="45"/>
+    <columna
+        nombre="total"
+        tipo="Real"
+        largo="2"/>
+    <fks referencia="//@tablas.0"
+        columna="//@tablas.0/@columna.0"
+        nombre="Cliente_id"/>
+  </tablas>
+  <tablas nombre="Factura_has_Orden">
+    <columna
+        nombre="id"
+        esPK="true"
+        esAutoIncrementable="true"/>
+    <fks referencia="//@tablas.1"
+        columna="//@tablas.1/@columna.0"
+        nombre="Factura_id"/>
+    <fks referencia="//@tablas.1"
+        columna="//@tablas.3/@columna.0"
+        nombre="Orden_id"/>
+  </tablas>
+  <tablas nombre="Orden">
+    <columna
+        nombre="id"
+        esPK="true"
+        esAutoIncrementable="true"/>
+    <columna
+        nombre="cantidad"/>
+    <columna
+        nombre="orden_cobrada"
+        tipo="Boolean"/>
+    <fks referencia="//@tablas.4"
+        columna="//@tablas.4/@columna.0"
+        nombre="Producto_id"/>
+    <fks referencia="//@tablas.5"
+        columna="//@tablas.5/@columna.0"
+        nombre="Mesa_id"/>
+  </tablas>
+  <tablas nombre="Producto">
+    <columna
+        nombre="id"
+        esPK="true"
+        esAutoIncrementable="true"/>
+    <columna
+        nombre="nombre"
+        tipo="Cadena"
+        largo="45"/>
+    <columna
+        nombre="precio"
+        tipo="Real"
+        largo="2"/>
+  </tablas>
+  <tablas nombre="Mesa">
+    <columna
+        nombre="id"
+        esPK="true"
+        esAutoIncrementable="true"/>
+  </tablas>
+</dBRelacional:Esquema>

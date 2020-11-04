@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dBRelacional:Esquema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dBRelacional="http://www.example.org/dBRelacional"
+    xsi:schemaLocation="http://www.example.org/dBRelacional /DBRelacional/model/dBRelacional.ecore"
+    nombre="Colegio">
+  <tablas nombre="Alumno">
+    <columna
+        nombre="idAlumno"
+        esPK="true"/>
+    <columna
+        nombre="nombreAlumno"
+        tipo="Cadena"
+        largo="50"/>
+  </tablas>
+  <tablas nombre="Profesores">
+    <columna
+        nombre="idProfesor"
+        esPK="true"/>
+  </tablas>
+  <tablas nombre="Materias">
+    <columna
+        nombre="idMateria"
+        esPK="true"/>
+    <columna
+        nombre="esBasica"
+        tipo="Boolean"/>
+  </tablas>
+  <tablas nombre="ProfesorMateri">
+    <columna
+        nombre="idMateria"/>
+    <columna
+        nombre="idProfesor"/>
+  </tablas>
+</dBRelacional:Esquema>

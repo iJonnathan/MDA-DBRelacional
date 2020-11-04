@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/dBRelacional')]
+
+
+[template public generateElement(anEsquema : Esquema)]
+[comment @main/]
+[file(anEsquema.nombre+'.sql',false)]
+[for (t:Tabla | anEsquema.tablas) separator ('\n')]
+	CREATE TABLE [t.nombre/]()
+	[comment añadimos las columnas/]
+	[for (c:Columna | t.columna) ]
+		[c.nombre/]['['/]10[']'/]
+	[/for]		
+[/for]
+[/file]	
+[/template]

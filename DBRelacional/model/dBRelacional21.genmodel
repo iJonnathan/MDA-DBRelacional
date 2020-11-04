@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/DBRelacional/src" modelPluginID="DBRelacional"
+    modelName="DBRelacional21" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>dBRelacional.ecore</foreignModel>
+  <genPackages prefix="DBRelacional" disposableProviderFactory="true" ecorePackage="dBRelacional.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dBRelacional.ecore#//TipoDato">
+      <genEnumLiterals ecoreEnumLiteral="dBRelacional.ecore#//TipoDato/Entero"/>
+      <genEnumLiterals ecoreEnumLiteral="dBRelacional.ecore#//TipoDato/Real"/>
+      <genEnumLiterals ecoreEnumLiteral="dBRelacional.ecore#//TipoDato/Caracter"/>
+      <genEnumLiterals ecoreEnumLiteral="dBRelacional.ecore#//TipoDato/Cadena"/>
+      <genEnumLiterals ecoreEnumLiteral="dBRelacional.ecore#//TipoDato/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="dBRelacional.ecore#//TipoDato/Fecha"/>
+      <genEnumLiterals ecoreEnumLiteral="dBRelacional.ecore#//TipoDato/FechaHora"/>
+    </genEnums>
+    <genClasses ecoreClass="dBRelacional.ecore#//Esquema">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dBRelacional.ecore#//Esquema/tablas"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dBRelacional.ecore#//Esquema/nombre"/>
+    </genClasses>
+    <genClasses ecoreClass="dBRelacional.ecore#//Tabla">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dBRelacional.ecore#//Tabla/esquema"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dBRelacional.ecore#//Tabla/columna"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dBRelacional.ecore#//Tabla/fks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dBRelacional.ecore#//Tabla/nombre"/>
+    </genClasses>
+    <genClasses ecoreClass="dBRelacional.ecore#//FK">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dBRelacional.ecore#//FK/referencia"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dBRelacional.ecore#//FK/columna"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dBRelacional.ecore#//FK/nombre"/>
+    </genClasses>
+    <genClasses ecoreClass="dBRelacional.ecore#//Columna">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dBRelacional.ecore#//Columna/tabla"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dBRelacional.ecore#//Columna/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dBRelacional.ecore#//Columna/tipo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dBRelacional.ecore#//Columna/esPK"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dBRelacional.ecore#//Columna/permiteNulos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dBRelacional.ecore#//Columna/largo"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

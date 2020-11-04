@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dBRelacional:Esquema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dBRelacional="http://www.example.org/dBRelacional"
+    xsi:schemaLocation="http://www.example.org/dBRelacional dBRelacional.ecore"
+    nombre="RRHH">
+  <tablas nombre="Empleado">
+    <columna
+        nombre="nombre"/>
+    <columna
+        nombre="departamento"/>
+    <columna
+        nombre="nombres"/>
+    <fks referencia="//@tablas.1"
+        columna="//@tablas.0/@columna.1"
+        nombre="fk_emp_dep"/>
+  </tablas>
+  <tablas nombre="Departamento">
+    <columna
+        nombre="id_departamento"/>
+    <columna
+        nombre="Nombre"
+        tipo="Caracter"
+        largo="50"/>
+  </tablas>
+  <tablas nombre="Cargo">
+    <columna
+        nombre="idCargp"/>
+  </tablas>
+</dBRelacional:Esquema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dBRelacional:Esquema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dBRelacional="http://www.example.org/dBRelacional"
+    xsi:schemaLocation="http://www.example.org/dBRelacional dBRelacional.ecore">
+  <tablas nombre="Cliente">
+    <columna
+        nombre="IdCliente"
+        esPK="true"/>
+    <columna
+        nombre="nombreCliente"
+        tipo="Cadena"
+        largo="50"/>
+  </tablas>
+  <tablas nombre="Factura">
+    <columna
+        nombre="numFactura"/>
+    <columna
+        nombre="idProducto"/>
+    <columna
+        nombre="idCliente"/>
+    <columna
+        nombre="Cantidad"/>
+    <fks referencia="//@tablas.0"
+        columna="//@tablas.0/@columna.0"
+        nombre="fk_facCliente"/>
+    <fks referencia="//@tablas.1"
+        columna="//@tablas.2/@columna.0"
+        nombre="fk_facProducto"/>
+  </tablas>
+  <tablas nombre="Producto">
+    <columna
+        nombre="idProducto"/>
+    <columna
+        nombre="nombreProducto"
+        tipo="Cadena"
+        largo="100"/>
+    <columna
+        nombre="Cantidad"/>
+  </tablas>
+</dBRelacional:Esquema>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dBRelacional:Esquema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dBRelacional="http://www.example.org/dBRelacional"
+    xsi:schemaLocation="http://www.example.org/dBRelacional dBRelacional.ecore"
+    nombre="FacturacionFarmacias">
+  <tablas nombre="Clientes">
+    <columna
+        nombre="cedula"
+        esPK="true"/>
+  </tablas>
+  <tablas nombre="Factura">
+    <columna
+        nombre="idCliente"/>
+    <fks referencia="//@tablas.0"
+        columna="//@tablas.1/@columna.0"
+        nombre="fk_cliente"/>
+  </tablas>
+</dBRelacional:Esquema>
